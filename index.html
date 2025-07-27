@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Construction Project Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Construction Project Tracker</h1>
+
+  <section class="task-assignment">
+    <h2>Task Assignment</h2>
+    <form id="taskForm">
+      <input type="text" placeholder="Task Title" id="taskTitle" required />
+      <input type="text" placeholder="Assigned To" id="assignedTo" required />
+      <input type="date" id="startDate" required />
+      <input type="date" id="endDate" required />
+      <button type="submit">Add Task</button>
+    </form>
+
+    <table id="taskTable">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Assigned To</th>
+          <th>Start</th>
+          <th>End</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="phase-update">
+    <h2>Phase Update</h2>
+    <select id="phaseName">
+      <option>Planning</option>
+      <option>Foundation</option>
+      <option>Framing</option>
+      <option>Finishing</option>
+    </select>
+    <input type="number" id="progress" placeholder="% Completed" min="0" max="100" />
+    <textarea id="comments" placeholder="Notes..."></textarea>
+    <button onclick="updatePhase()">Update Phase</button>
+
+    <ul id="phaseUpdates"></ul>
+  </section>
+
+  <section class="progress-graph">
+    <h2>Progress Graph</h2>
+    <canvas id="progressChart" width="400" height="200"></canvas>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
